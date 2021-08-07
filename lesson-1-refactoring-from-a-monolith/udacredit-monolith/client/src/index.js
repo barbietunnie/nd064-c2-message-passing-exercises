@@ -15,7 +15,7 @@ class App extends React.Component {
     }
 
     loadCustomers = () => {
-        fetch(`${host || 'http://localhost'}:5000/api/customers`)
+        fetch(`${this.host || 'http://localhost'}:5000/api/customers`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -32,7 +32,7 @@ class App extends React.Component {
     }
 
     loadEmployees = () => {
-        fetch(`${host || 'http://localhost'}:5000/api/employees`)
+        fetch(`${this.host || 'http://localhost'}:5000/api/employees`)
             .then(res => res.json())
             .then(
                 (result) => {
