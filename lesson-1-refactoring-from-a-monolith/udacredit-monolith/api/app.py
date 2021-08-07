@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, make_response
+from flask_cors import CORS
 
 from .services.customers import get_customers
 from .services.employees import get_employees
 from .services.notifications import send_notifications
 
 app = Flask(__name__)
+CORS(app)
 
 # Mozilla provides good references for Access Control at:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
