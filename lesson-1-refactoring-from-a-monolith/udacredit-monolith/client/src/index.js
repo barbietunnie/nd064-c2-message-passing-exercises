@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css'
 
 class App extends React.Component {
+    host = 'http://54.216.82.80'
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +15,7 @@ class App extends React.Component {
     }
 
     loadCustomers = () => {
-        fetch("http://localhost:5000/api/customers")
+        fetch(`${host || 'http://localhost'}:5000/api/customers`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -30,7 +32,7 @@ class App extends React.Component {
     }
 
     loadEmployees = () => {
-        fetch("http://localhost:5000/api/employees")
+        fetch(`${host || 'http://localhost'}:5000/api/employees`)
             .then(res => res.json())
             .then(
                 (result) => {
